@@ -1,15 +1,15 @@
 import EMPLOYEE_UPDATE from "../acions/types";
 
-const InitialState = {
+const INITIAL_STATE = {
   name: "",
   phone: "",
   shift: ""
 };
 
-export default (state = InitialState, action) => {
+export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case EMPLOYEE_UPDATE:
-      return { ...state, [action.payload.prop]: [action.payload.value] };
+      return { ...state, [action.payload.prop]: action.payload.value };
     default:
       return state;
   }
